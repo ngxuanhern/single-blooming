@@ -20,13 +20,18 @@ public class HomeServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
+
         String catalogJson = "["
                 + "{ \"name\": \"Stole My Heart (V188)\", \"price\": 188, \"image\": \"img.png\" },"
                 + "{ \"name\": \"Santa Mini Bouquet\", \"price\": 58, \"image\": \"img_1.png\" },"
                 + "{ \"name\": \"Xmas Flower Bouquet\", \"price\": 108, \"image\": \"img_2.png\" },"
                 + "{ \"name\": \"Xmas Mini Flower Bouquet\", \"price\": 88, \"image\": \"img_3.png\" },"
                 + "{ \"name\": \"Black Leyanna\", \"price\": 88, \"image\": \"img_4.png\" },"
-                + "{ \"name\": \"Nolan\", \"price\": 88, \"image\": \"img_5.png\" }"
+                + "{ \"name\": \"Nolan\", \"price\": 88, \"image\": \"img_5.png\" },"
+                + "{ \"name\": \"Carmelia\", \"price\": 90 , \"image\": \"img_6.webp\" },"
+                + "{ \"name\": \"Daily Light\", \"price\": 78 , \"image\": \"img_6.jpeg\" },"
+                + "{ \"name\": \"Lovely Lilac\", \"price\": 105 , \"image\": \"img_7.jpg\" },"
+                + "{ \"name\": \"Daily Light\", \"price\": 85 , \"image\": \"img_8.jpg\" }"
                 + "]";
 
         response.getWriter().write(catalogJson);

@@ -11,6 +11,7 @@ html, body, #root {
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
+    background-color:#ffe6f2;
 }
 
 input:focus {
@@ -63,7 +64,7 @@ input:focus {
 .price-filter input[type="radio"]:checked {
     background-color: #ff8166;
     border-color: #ff8166;
-    color: white;               /
+    color: white;
 }
 
 /* Optional: Style the inner circle of the radio button when selected */

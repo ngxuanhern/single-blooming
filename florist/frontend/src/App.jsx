@@ -25,17 +25,14 @@ function App() {
     }, []);
 
     const addToCart = async (item) => {
-        const username = localStorage.getItem('username'); // Get the username from localStorage
+        const username = localStorage.getItem('username');
 
         if (!username) {
             alert('You must log in first to add items to the cart.');
             return;
         }
 
-        const payload = {
-            username,
-            item
-        };
+        const payload = { username, item };
 
         try {
             const response = await fetch('http://localhost:8080/florist-1.0-SNAPSHOT/api/cart', {
@@ -48,7 +45,7 @@ function App() {
 
             if (response.ok) {
                 alert('Item added to cart!');
-                fetchCart(); // Refresh the cart
+                fetchCart();
             } else {
                 const errorData = await response.json();
                 console.error('Error adding item to cart:', errorData.message);
@@ -82,7 +79,7 @@ function App() {
 
             if (response.ok) {
                 alert('Item removed from cart!');
-                fetchCart(); // Refresh the cart
+                fetchCart();
             } else {
                 console.error('Error removing item from cart');
             }
@@ -94,22 +91,18 @@ function App() {
     const clearCart = async () => {
         const username = localStorage.getItem('username');
         try {
-            // Loop through all items and delete each one by its name
             for (const item of cart) {
-                const itemName = item.name; // Get the item name to pass as a parameter
-
+                const itemName = item.name;
                 try {
                     const response = await fetch(`http://localhost:8080/florist-1.0-SNAPSHOT/api/cart?username=${username}&item=${encodeURIComponent(itemName)}`, {
                         method: 'DELETE',
                     });
-
                     fetchCart();
                 } catch (error) {
                     console.error('Error removing item from cart:', error);
                 }
             }
 
-            // If all items are successfully deleted, clear cart from frontend
             setCart([]);
             alert('Cart cleared!');
         } catch (error) {
@@ -117,7 +110,6 @@ function App() {
             alert('Failed to clear cart. Please try again.');
         }
     };
-
 
     const makePayment = async () => {
         const username = localStorage.getItem('username');
@@ -160,116 +152,200 @@ function App() {
 
     const handleLogout = () => {
         localStorage.removeItem('username');
-        window.location.reload(); // Refresh to update the UI
+        window.location.reload();
     };
 
     return (
         <Router>
             <div className="App">
                 <Toaster position="top-right" />
-                <header className="header sticky-top">
-                    <div className="container-fluid py-2 bg-light d-flex align-items-center justify-content-between">
-                        <h1 className="shop-name text-center">Flower Shop</h1>
-                        <div className="header-actions d-flex align-items-center">
-                            {!username ? (
-                                <Link to="/login" className="login-link me-3">
-                                    Login/Register
-                                </Link>
-                            ) : (
-                                <div className="dropdown">
-                                    <button
-                                        className="btn btn-light dropdown-toggle d-flex align-items-center"
-                                        type="button"
-                                        id="profileDropdown"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        <span className="me-2">Welcome, {username}!</span>
-                                        <img
-                                            src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
-                                            alt="Profile"
-                                            className="profile-icon"
-                                        />
-                                    </button>
-                                    <ul className="dropdown-menu" aria-labelledby="profileDropdown">
-                                        <li>
-                                            <Link to="/order" className="dropdown-item">
-                                                My Order
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <button className="dropdown-item" onClick={handleLogout}>
-                                                Logout
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            )}
-                            <Link to="/cart" className="cart-button ms-3">
-                                <div className="cart-container">
-                                    <img
-                                        src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png"
-                                        alt="Cart"
-                                        className="cart-icon"
-                                    />
-                                    {cart.length > 0 && <span className="cart-badge"></span>}
-                                </div>
+                <header className="header">
+                    <h1 className="shop-name">Single and Blooming</h1>
+                    <div className="header-actions">
+                        {!username ? (
+                            <Link to="/login" className="btn btn-outline-primary">
+                                Login/Register
                             </Link>
-                        </div>
-                    </div>
-                    <nav className="navbar navbar-expand-lg navbar-light bg-white">
-                        <div className="container justify-content-center">
-                            <ul className="navbar-nav">
-                                <li className="nav-item">
-                                    <Link to="/" className="nav-link">
-                                        Home
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to="/product" className="nav-link">
-                                        Product
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to="/about" className="nav-link">
-                                        About
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-                <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <div className="Home">
-                                <h2>This is homepage</h2>
+                        ) : (
+                            <div className="dropdown">
+                                <button
+                                    className="btn btn-outline-secondary dropdown-toggle d-flex align-items-center"
+                                    type="button"
+                                    id="profileDropdown"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    <span className="me-2">Welcome, {username}!</span>
+                                    <img
+                                        src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
+                                        alt="Profile"
+                                        className="profile-icon rounded-circle"
+                                        style={{ width: '30px', height: '30px' }}
+                                    />
+                                </button>
+                                <ul className="dropdown-menu" aria-labelledby="profileDropdown">
+                                    <li>
+                                        <Link to="/order" className="dropdown-item">
+                                            My Order
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <button className="dropdown-item" onClick={handleLogout}>
+                                            Logout
+                                        </button>
+                                    </li>
+                                </ul>
                             </div>
-                        }
-                    />
-                    <Route
-                        path="/product"
-                        element={<Product catalog={catalog} addToCart={addToCart} />}
-                    />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route
-                        path="/order"
-                        element={<Order order={order} fetchOrder={fetchOrder} />}
-                    />
-                    <Route
-                        path="/cart"
-                        element={<Cart
-                                     cart={cart}
-                                     fetchCart={fetchCart}
-                                     deleteFromCart={deleteFromCart}
-                                     clearCart={clearCart}
-                                     makePayment={makePayment}
-                                 />}
-                    />
+                        )}
+                        <Link to="/cart" className="btn btn-outline-secondary position-relative">
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png"
+                                alt="Cart"
+                                className="cart-icon"
+                                style={{ width: '30px', height: '30px' }}
+                            />
+                            {cart.length > 0 && (
+                                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    {cart.length}
+                                </span>
+                            )}
+                        </Link>
+                    </div>
+                </header>
+                <nav className="navbar">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <Link to="/" className="nav-link">
+                                Home
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/product" className="nav-link">
+                                Product
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/about" className="nav-link">
+                                About
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Routes>
+                    <Route path="/" element={
+                        <div className="Home">
+                            <h2>Welcome to Single and Blooming Florist!</h2>
+
+                            {/* Featured Flowers Section */}
+                            <div className="featured-flowers">
+                                <h3>Featured Flowers</h3>
+                                <div className="flowers-grid">
+                                    <div className="flower-card">
+                                        <img
+                                            src="../public/img_1.png"
+                                            className="flower-image"
+                                            alt="Flower 1"
+                                        />
+                                        <Link to="/product" className="btn btn-primary">View More</Link>
+                                    </div>
+                                    <div className="flower-card">
+                                        <img
+                                            src="../public/img_2.png"
+                                            alt="Flower 2"
+                                            className="flower-image"
+                                        />
+                                        <Link to="/product" className="btn btn-primary">View More</Link>
+                                    </div>
+                                    <div className="flower-card">
+                                        <img
+                                            src="../public/img_3.png"
+                                            alt="Flower 3"
+                                            className="flower-image"
+                                        />
+                                        <Link to="/product" className="btn btn-primary">View More</Link>
+                                    </div>
+                                    <div className="flower-card">
+                                        <img
+                                            src="../public/img_4.png"
+                                            alt="Flower 4"
+                                            className="flower-image"
+                                        />
+                                        <Link to="/product" className="btn btn-primary">View More</Link>
+                                    </div>
+                                    <div className="flower-card">
+                                        <img
+                                            src="../public/img_5.png"
+                                            alt="Flower 5"
+                                            className="flower-image"
+                                        />
+                                        <Link to="/product" className="btn btn-primary">View More</Link>
+                                    </div>
+                                </div>
+
+                                {/* Promo Banner Section */}
+                                <div className="promo-banner">
+                                    <h4>Get 10% off your first order!</h4>
+                                    <a href="/product" className="btn btn-success">Shop Now</a>
+                                </div>
+
+                            </div>
+                        </div>
+                            } />
+                            <Route path="/product" element={<Product catalog={catalog} addToCart={addToCart}/>}/>
+                            <Route path="/about" element={<About/>}/>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/register" element={<Register/>}/>
+                    <Route path="/order" element={<Order order={order} fetchOrder={fetchOrder}/>}/>
+                    <Route path="/cart" element={<Cart cart={cart} fetchCart={fetchCart} deleteFromCart={deleteFromCart} clearCart={clearCart} makePayment={makePayment} />} />
                 </Routes>
+
+                {/* Footer */}
+                <footer className="footer">
+                    <div className="footer-logo">
+                        <img src="../public/Sb.logo.png" alt="Single Blooming" className="footer-logo-img" />
+                        <h3 className="footer-shop-name">SINGLE BLOOMING</h3>
+                    </div>
+                    <div className="footer-info">
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Track Your Order</a></li>
+                        </ul>
+                        <p><strong>QUICK LINKS</strong></p>
+                        <ul>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/product">Products</Link></li>
+                            <li><Link to="/about">About</Link></li>
+                            <li><Link to="/cart">Cart</Link></li>
+                        </ul>
+                        <p><strong>CONTACT US</strong></p>
+                        <ul>
+                            <li>+60 11 6306 5938</li>
+                            <li>info@singleblooming.com</li>
+                        </ul>
+                        <p><strong>Corporate</strong></p>
+                        <ul>
+                            <li>corporate@singleblooming.com</li>
+                        </ul>
+                        <p><strong>Marketing</strong></p>
+                        <ul>
+                            <li>marketing@singleblooming.com</li>
+                        </ul>
+                    </div>
+                    <div className="footer-social">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                            <img src="facebook-icon.png" alt="Facebook" className="social-icon" />
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                            <img src="instagram-icon.png" alt="Instagram" className="social-icon" />
+                        </a>
+                        <a href="mailto:info@singleblooming.com">
+                            <img src="email-icon.png" alt="Email" className="social-icon" />
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                            <img src="twitter-icon.png" alt="Twitter" className="social-icon" />
+                        </a>
+                    </div>
+                </footer>
             </div>
         </Router>
     );
