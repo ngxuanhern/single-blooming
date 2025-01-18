@@ -1,0 +1,138 @@
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    overflow: auto; /* Ensure the page can scroll */
+}
+
+.App-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+    color: black;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #FF5733; /* Example hover effect */
+}
+
+/* order page styles */
+.order {
+    padding: 20px;
+    background-color: white;
+    flex: 1; /* Ensures this section takes up remaining space */
+}
+
+.order h2 {
+    text-align: center;
+    color: black;
+}
+
+.order-items {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: white;
+    color: black;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.order-item img {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.order-item button {
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    padding: 5px 15px; /* Adjust padding for a comfortable button size */
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block; /* Allow button to resize according to its content */
+    text-align: center;
+    white-space: nowrap; /* Prevent the text from wrapping */
+    min-width: auto; /* Allow button to shrink or expand based on the text length */
+}
+
+.order-item button:hover {
+    background-color: #e74c3c;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1; /* Ensure item info takes remaining space */
+}
+
+button {
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e74c3c;
+}

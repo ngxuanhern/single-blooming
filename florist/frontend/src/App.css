@@ -1,0 +1,92 @@
+/* General Styles */
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* Header Styles */
+.header {
+    border-bottom: 1px solid #ccc;
+    z-index: 1030; /* Ensure it stays above other content */
+}
+
+.shop-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Login Link Styles */
+.login-link {
+    margin-top: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+.login-link:hover {
+    color: #FF5733;
+}
+
+/* Cart Button Styles */
+.cart-button {
+    padding-top: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.cart-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    border: 2px solid white; /* Optional: Adds a white border for better visibility */
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow for depth */
+}
+
+/* Navbar Styles */
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff8166;
+}
+
+/* Sticky Header */
+.sticky-top {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}

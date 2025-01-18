@@ -1,0 +1,81 @@
+/* Apply box-sizing to include padding and border in width */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Set background color and ensure center alignment */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* Lighter background color for a cleaner look */
+    margin: 0;
+}
+
+/* Customize the login container */
+.login-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 0 auto; /* Center the container */
+}
+
+/* Style the form heading */
+h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Style for form labels and inputs */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    box-shadow: none;
+    background-color: #f7f7f7; /* Light gray background initially */
+}
+
+/* Change background to white after input focus or entry */
+.form-control:focus,
+.form-control:not(:placeholder-shown) {
+    background-color: white; /* Change to white when focused or has content */
+}
+
+/* Custom login button */
+.custom-login-btn {
+    background-color: white;
+    border-color: black;
+    color: black;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 10px;
+}
+
+.custom-login-btn:hover {
+    background-color: black; /* Darker shade on hover */
+    border-color: black;
+    color: white;
+}
+
+.custom-login-btn:active {
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+
+/* Adjust links */
+.link {
+    color: #f78b74;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #f78b74;
+    text-decoration: underline;
+}
+
+/* Error alert style */
+.alert {
+    margin-bottom: 1rem;
+}

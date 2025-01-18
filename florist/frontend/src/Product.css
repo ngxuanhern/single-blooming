@@ -1,0 +1,180 @@
+/* General Styling */
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Container and Filters */
+.product-container {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #ff8166 !important;
+    outline: none !important;
+    box-shadow: 0 0 5px rgba(247, 139, 116, 0.7) !important;
+}
+
+.filters {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.filters input.search-bar {
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 20px;
+}
+
+.price-filter {
+    display: flex;
+    gap: 10px;
+}
+
+.price-filter label {
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+/* Basic styling */
+.price-filter input[type="radio"] {
+    margin-right: 25px;
+    cursor: pointer; /* Adds a pointer on hover to indicate interactivity */
+}
+
+/* Hover effect */
+.price-filter input[type="radio"]:hover {
+    background-color: #f0f0f0;
+    border-color: #ff8166;
+}
+
+/* Selected effect */
+.price-filter input[type="radio"]:checked {
+    background-color: #ff8166;
+    border-color: #ff8166;
+    color: white;               /
+}
+
+/* Optional: Style the inner circle of the radio button when selected */
+.price-filter input[type="radio"]:checked::before {
+    content: '\2022';
+    font-size: 18px;
+    color: white;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+}
+
+/* Catalog Styling */
+/* Catalog Container */
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 30px; /* Space between cards */
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center; /* Center-align the grid */
+}
+
+/* Catalog Card */
+.catalog-item {
+    border: 1px solid #ccc;
+    min-height: 400px;
+    padding: 10px; /* Add padding inside the card */
+    background-color: white;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.catalog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Container with Hover Effect */
+.catalog-image-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.catalog-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Darkening the Image on Hover */
+.catalog-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* No shade initially */
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+.catalog-image-container:hover::before {
+    background-color: rgba(0, 0, 0, 0.4); /* Dark shade on hover */
+}
+
+/* Add-to-Cart Button */
+.catalog-image-container .add-to-cart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 10px; /* Adjust padding for a horizontal rectangle shape */
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2; /* Above the darkening overlay */
+    border-radius: 0; /* Sharp rectangle corners */
+    transition: opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.catalog-image-container .add-to-cart:hover {
+    background-color: white;
+    color: grey;
+}
+
+/* Hover State */
+.catalog-image-container:hover .add-to-cart {
+    opacity: 1;
+}
+
+/* Item Title */
+.catalog-item h2 {
+    font-size: 1.2rem;
+    color: #343a40;
+    margin: 15px 0;
+}
+
+.catalog-item span {
+    font-size: 1.2rem;
+    color: grey;
+    margin: 15px 0;
+}

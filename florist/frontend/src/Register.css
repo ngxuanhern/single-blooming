@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Set background color and ensure center alignment */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* Lighter background color for a cleaner look */
+    margin: 0;
+}
+
+/* Customize the login container */
+.register-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+/* Style the form heading */
+h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Custom button hover effect */
+button:hover {
+    color: white;
+    background-color: black;
+}
+
+/* Style for form labels and inputs */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    box-shadow: none;
+}
+
+/* Input focus effect */
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.custom-register-btn {
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+.custom-register-btn:hover {
+    background-color: black; /* Darker shade on hover */
+    border-color: black;
+    color: white;
+}
+
+
+/* Adjust links */
+.link {
+    color: #f78b74;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #f78b74;
+    text-decoration: underline;
+}
