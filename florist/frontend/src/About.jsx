@@ -1,13 +1,16 @@
 import React from 'react';
 import './About.css';
-
+import { useEffect } from 'react';
 function About() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div className="About-container">
             <div className="About-body">
                 <h2>About Us</h2>
                 <p>
-                    Welcome to the Flower Shop! We offer hand-picked flowers and stunning arrangements for every occasion.
+                    Welcome to the <span className="font-semibold">Single & Blooming</span> Flower Shop! We offer hand-picked flowers and stunning arrangements for every occasion.
                     Whether it’s a birthday, anniversary, or simply brightening someone’s day, our bouquets are crafted to make every moment special.
                 </p>
                 <p>
@@ -22,7 +25,7 @@ function About() {
                     <li><strong>Exceptional Service</strong> that ensures a seamless experience.</li>
                 </ul>
                 <p>
-                    At the Flower Shop, we take pride in making every occasion unforgettable. Browse our collections today
+                    At Single & Blooming, we take pride in making every occasion unforgettable. Browse our collections today
                     and let us help you create memories with the gift of flowers!
                 </p>
             </div>

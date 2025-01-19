@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './Product.css';
-
+import { useEffect } from 'react';
 function Product({ catalog, addToCart }) {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedRange, setSelectedRange] = useState([0, Infinity]);
 
@@ -22,6 +25,7 @@ function Product({ catalog, addToCart }) {
     });
 
     return (
+        <>
         <div className="product-container">
             {/* Search and Filter Row */}
             <div className="filters">
@@ -65,6 +69,7 @@ function Product({ catalog, addToCart }) {
                 ))}
             </div>
         </div>
+        </>
     );
 }
 

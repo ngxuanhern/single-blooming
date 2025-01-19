@@ -6,7 +6,16 @@ html, body, #root {
     color: #333;
 
 }
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
 
+.quantity-control button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
 .cart-container
 {
     background-color:#ffe6f2;

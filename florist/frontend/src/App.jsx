@@ -9,8 +9,13 @@ import Register from './Register';
 import Login from './Login';
 import Order from './Order';
 import Cart from './Cart';
-
+import Hero from './Hero.jsx';
+import Footer from './Footer.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx'
 function App() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const username = localStorage.getItem('username');
     const [catalog, setCatalog] = useState([]);
     const [cart, setCart] = useState([]);
@@ -157,6 +162,7 @@ function App() {
 
     return (
         <Router>
+            <ScrollToTop/>
             <div className="App">
                 <Toaster position="top-right" />
                 <header className="header">
@@ -215,19 +221,19 @@ function App() {
                 <nav className="navbar">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link to="/" className="nav-link">
+                            <a href="/" className="nav-link">
                                 Home
-                            </Link>
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <Link to="/product" className="nav-link">
-                                Product
-                            </Link>
+                            <a href="/product" className="nav-link">
+                                Products
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <Link to="/about" className="nav-link">
+                            <a href="/about" className="nav-link">
                                 About
-                            </Link>
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -235,10 +241,10 @@ function App() {
                     <Route path="/" element={
                         <div className="Home">
                             <h2>Welcome to Single and Blooming Florist!</h2>
-
+                            <Hero/>
                             {/* Featured Flowers Section */}
                             <div className="featured-flowers">
-                                <h3>Featured Flowers</h3>
+                                <h3 className="text-black font-bold">Featured Flowers</h3>
                                 <div className="flowers-grid">
                                     <div className="flower-card">
                                         <img
@@ -246,7 +252,7 @@ function App() {
                                             className="flower-image"
                                             alt="Flower 1"
                                         />
-                                        <Link to="/product" className="btn btn-primary">View More</Link>
+                                        <a href="/product" className="btn btn-primary">View More</a>
                                     </div>
                                     <div className="flower-card">
                                         <img
@@ -254,7 +260,7 @@ function App() {
                                             alt="Flower 2"
                                             className="flower-image"
                                         />
-                                        <Link to="/product" className="btn btn-primary">View More</Link>
+                                        <a href="/product" className="btn btn-primary">View More</a>
                                     </div>
                                     <div className="flower-card">
                                         <img
@@ -262,7 +268,7 @@ function App() {
                                             alt="Flower 3"
                                             className="flower-image"
                                         />
-                                        <Link to="/product" className="btn btn-primary">View More</Link>
+                                        <a href="/product" className="btn btn-primary">View More</a>
                                     </div>
                                     <div className="flower-card">
                                         <img
@@ -270,7 +276,7 @@ function App() {
                                             alt="Flower 4"
                                             className="flower-image"
                                         />
-                                        <Link to="/product" className="btn btn-primary">View More</Link>
+                                        <a href="/product" className="btn btn-primary">View More</a>
                                     </div>
                                     <div className="flower-card">
                                         <img
@@ -278,14 +284,14 @@ function App() {
                                             alt="Flower 5"
                                             className="flower-image"
                                         />
-                                        <Link to="/product" className="btn btn-primary">View More</Link>
+                                        <a href="/product" className="btn btn-primary">View More</a>
                                     </div>
                                 </div>
 
                                 {/* Promo Banner Section */}
                                 <div className="promo-banner">
                                     <h4>Get 10% off your first order!</h4>
-                                    <a href="/product" className="btn btn-success">Shop Now</a>
+                                    <a href="/product" className="btn btn-primary">Shop Now</a>
                                 </div>
 
                             </div>
@@ -298,54 +304,8 @@ function App() {
                     <Route path="/order" element={<Order order={order} fetchOrder={fetchOrder}/>}/>
                     <Route path="/cart" element={<Cart cart={cart} fetchCart={fetchCart} deleteFromCart={deleteFromCart} clearCart={clearCart} makePayment={makePayment} />} />
                 </Routes>
+                <Footer/>
 
-                {/* Footer */}
-                <footer className="footer">
-                    <div className="footer-logo">
-                        <img src="../public/Sb.logo.png" alt="Single Blooming" className="footer-logo-img" />
-                        <h3 className="footer-shop-name">SINGLE BLOOMING</h3>
-                    </div>
-                    <div className="footer-info">
-                        <ul>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Track Your Order</a></li>
-                        </ul>
-                        <p><strong>QUICK LINKS</strong></p>
-                        <ul>
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/product">Products</Link></li>
-                            <li><Link to="/about">About</Link></li>
-                            <li><Link to="/cart">Cart</Link></li>
-                        </ul>
-                        <p><strong>CONTACT US</strong></p>
-                        <ul>
-                            <li>+60 11 6306 5938</li>
-                            <li>info@singleblooming.com</li>
-                        </ul>
-                        <p><strong>Corporate</strong></p>
-                        <ul>
-                            <li>corporate@singleblooming.com</li>
-                        </ul>
-                        <p><strong>Marketing</strong></p>
-                        <ul>
-                            <li>marketing@singleblooming.com</li>
-                        </ul>
-                    </div>
-                    <div className="footer-social">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                            <img src="/facebook.png" alt="Facebook" className="social-icon" />
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                            <img src="/instagram.png" alt="Instagram" className="social-icon" />
-                        </a>
-                        <a href="mailto:info@singleblooming.com">
-                            <img src="/email.png" alt="Email" className="social-icon" />
-                        </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                            <img src="/twitter.png" alt="Twitter" className="social-icon" />
-                        </a>
-                    </div>
-                </footer>
             </div>
         </Router>
     );

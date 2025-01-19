@@ -67,53 +67,53 @@ function Cart({ cart, fetchCart, deleteFromCart, clearCart, makePayment }) {
 
     return (
         <div className= "cart-container">
-        <div className="cart">
-            <h2>Your Cart</h2>
-            {groupedItems.length === 0 ? (
-                <p>Your cart is empty.</p>
-            ) : (
-                <div className="cart-items">
-                    {groupedItems.map((item, index) => (
-                        <div key={index} className="cart-item">
-                            <img src={item.image} alt={item.name} />
-                            <div className="item-info">
-                                <h3>{item.name}</h3>
-                                <p>Price: RM {item.price}</p>
-                                <p>Quantity: {item.quantity}</p>
-                                <button onClick={() => deleteFromCart(item.name)}>Remove</button>
+            <div className="cart">
+                <h2>Your Cart</h2>
+                {groupedItems.length === 0 ? (
+                    <p>Your cart is empty.</p>
+                ) : (
+                    <div className="cart-items">
+                        {groupedItems.map((item, index) => (
+                            <div key={index} className="cart-item">
+                                <img src={item.image} alt={item.name} />
+                                <div className="item-info">
+                                    <h3>{item.name}</h3>
+                                    <p>Price: RM {item.price}</p>
+                                    <p>Quantity: {item.quantity}</p>
+                                    <button onClick={() => deleteFromCart(item.name)}>Remove</button>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-            )}
-            <div className="cart-actions">
-                <button
-                    onClick={clearCart}
-                    disabled={groupedItems.length === 0}
-                >
-                    Clear Cart
-                </button>
-                <button
-                    onClick={handleCheckout}
-                    disabled={groupedItems.length === 0}
-                >
-                    Checkout
-                </button>
-            </div>
-
-
-            {/* Confirmation pop-up */}
-            {showConfirmation && (
-                <div className="confirmation-popup">
-                    <div className="popup-content">
-                        <h3>Total Amount: RM {totalAmount}</h3>
-                        <p>Do you want to proceed with the payment?</p>
-                        <button onClick={handleConfirmPayment}>OK</button>
-                        <button onClick={() => setShowConfirmation(false)}>Cancel</button>
+                        ))}
                     </div>
+                )}
+                <div className="cart-actions">
+                    <button
+                        onClick={clearCart}
+                        disabled={groupedItems.length === 0}
+                    >
+                        Clear Cart
+                    </button>
+                    <button
+                        onClick={handleCheckout}
+                        disabled={groupedItems.length === 0}
+                    >
+                        Checkout
+                    </button>
                 </div>
-            )}
-        </div>
+
+
+                {/* Confirmation pop-up */}
+                {showConfirmation && (
+                    <div className="confirmation-popup">
+                        <div className="popup-content">
+                            <h3>Total Amount: RM {totalAmount}</h3>
+                            <p>Do you want to proceed with the payment?</p>
+                            <button onClick={handleConfirmPayment}>OK</button>
+                            <button onClick={() => setShowConfirmation(false)}>Cancel</button>
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
