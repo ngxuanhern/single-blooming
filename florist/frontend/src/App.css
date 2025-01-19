@@ -24,8 +24,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 1;
+    position: sticky;
+    z-index: 9999;
+
 }
 
 .header::before {
@@ -59,6 +60,7 @@ body {
     width: 100%;
     top: 0;
     position: sticky;
+    z-index: 99;
 
 }
 
@@ -69,7 +71,7 @@ body {
     list-style: none; /* Removes bullets from the list */
     margin: 0; /* Removes extra margin */
     padding: 0; /* Removes extra padding */
-    gap: 20px; /* Adds space between links */
+    gap: 20px;
 }
 
 .nav-item {
@@ -174,13 +176,20 @@ body {
 
 /* Dropdown Menu */
 .dropdown-menu {
+    position: absolute; /* Position the menu absolutely */
+    top: -100%; /* Moves the menu above the navbar */
+    left: 0; /* Aligns the menu with the left edge */
+    z-index: 1000; /* Ensures it stays above other elements */
+    background-color: #ffffff; /* White background for contrast */
     border: 1px solid #ff85a2; /* Light pink border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    padding: 10px; /* Adds spacing inside the menu */
 }
 
 .dropdown-item {
     color: #333333; /* Default text color */
     transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 99999;
 }
 
 .dropdown-item:hover {
@@ -445,6 +454,7 @@ body {
         flex-direction: column; /* Stack header items vertically */
         align-items: flex-start; /* Align items to the left */
         padding: 10px; /* Reduce padding */
+        position: sticky;
     }
 
     .shop-name {
@@ -456,6 +466,7 @@ body {
         margin-left: 0; /* Remove left margin */
         margin-top: 10px; /* Add top margin */
         justify-content: flex-start; /* Align navbar items to the left */
+        z-index: 9999;
     }
 
     .header-actions {

@@ -166,7 +166,7 @@ function App() {
             <div className="App">
                 <Toaster position="top-right" />
                 <header className="header">
-                    <h1 className="shop-name">Single and Blooming</h1>
+                    <h1 className="shop-name">Single & Blooming</h1>
                     <div className="header-actions">
                         {!username ? (
                             <Link to="/login" className="btn btn-outline-primary">
@@ -240,11 +240,11 @@ function App() {
                 <Routes>
                     <Route path="/" element={
                         <div className="Home">
-                            <h2>Welcome to Single and Blooming Florist!</h2>
+                            <h2>Welcome to Single & Blooming Florist!</h2>
                             <Hero/>
                             {/* Featured Flowers Section */}
                             <div className="featured-flowers">
-                                <h3 className="text-black font-bold">Featured Flowers</h3>
+                                <h3 className="text-black font-bold">Featured Products</h3>
                                 <div className="flowers-grid">
                                     <div className="flower-card">
                                         <img

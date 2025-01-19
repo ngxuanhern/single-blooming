@@ -47,7 +47,7 @@ const ItemsContainer = () => {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-5 gap-6 sm:px-8 px-5 py-16">
             <div>
-                <h1 className="font-bold text-2xl">SINGLE AND BLOOMING</h1>
+                <h1 className="font-bold text-2xl">SINGLE & BLOOMING</h1>
                 <p className="text-gray-200 text-sm">
                     Founded in 2020, Single & Blooming is Malaysia’s most stylish online florist and purveyor of gifts. We curate the most luxurious flowers, live plants and unique gifts from around the world, delivering them to your doorstep so you can focus on creating moments of happiness with the people you love.
                 </p>
