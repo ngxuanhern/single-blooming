@@ -61,12 +61,17 @@ html, body, #root {
 
 /* order page styles */
 .order {
+
     padding: 20px;
-    background-color: white;
+    background-color: #ffe6f2;
     flex: 1; /* Ensures this section takes up remaining space */
 }
 
 .order h2 {
+
+margin-top:25px;
+    margin-bottom:20px;
+    font-size:2.2rem;
     text-align: center;
     color: black;
 }
@@ -74,10 +79,15 @@ html, body, #root {
 .order-items {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
     background-color: white;
-    color: black;
+    padding: 20px; /* Add padding inside the white area */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    max-width: 800px; /* Adjust this value to control the width */
+    width: 100%; /* Ensure it takes up to the max-width */
+    margin: 0 auto; /* Center the white area horizontally */
+
+
 }
 
 .order-item {
@@ -135,4 +145,55 @@ button {
 
 button:hover {
     background-color: #e74c3c;
+}
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-item img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .order-item button {
+        width: 100%;
+        padding: 10px;
+    }
+
+
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .order h2 {
+        font-size: 1.8rem;
+    }
+
+    .order-items {
+        padding: 10px;
+    }
+
+    .order-item {
+        padding: 5px;
+    }
+
+    .order-item img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .order-item button {
+        width: 100%;
+        padding: 10px;
+    }
+
+
 }

@@ -25,7 +25,8 @@ input:focus {
     align-items: start;
     justify-content: start;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    margin-top: 25px;
     gap: 20px;
 }
 
@@ -178,4 +179,92 @@ input:focus {
     font-size: 1.2rem;
     color: grey;
     margin: 15px 0;
+}
+
+/* Responsive Design for Screens Smaller Than 768px */
+@media (max-width: 768px) {
+    /* Filters Section */
+    .filters {
+        flex-direction: column; /* Stack filters vertically */
+        align-items: center; /* Center-align filters */
+        gap: 10px; /* Reduce gap between filter elements */
+        margin-bottom: 15px; /* Reduce margin */
+    }
+
+    .filters input.search-bar {
+        width: 100%; /* Full width for search bar */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .price-filter {
+        flex-direction: column; /* Stack price filter options vertically */
+        align-items: center; /* Center-align price filter options */
+        gap: 5px; /* Reduce gap between radio buttons */
+    }
+
+    .price-filter label {
+        margin-right: 0; /* Remove right margin */
+    }
+
+    /* Catalog Section */
+    .catalog {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        gap: 20px; /* Reduce gap between cards */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .catalog-item {
+        min-height: 350px; /* Reduce card height */
+    }
+
+    .catalog-image-container {
+        height: 250px; /* Reduce image container height */
+    }
+
+    .catalog-item h2 {
+        font-size: 1.1rem; /* Reduce font size for item title */
+        margin: 10px 0; /* Reduce margin */
+    }
+
+    .catalog-item span {
+        font-size: 1rem; /* Reduce font size for price */
+        margin: 10px 0; /* Reduce margin */
+    }
+
+    /* Add-to-Cart Button */
+    .catalog-image-container .add-to-cart {
+        font-size: 0.9rem; /* Reduce font size for button */
+        padding: 8px 16px; /* Adjust padding */
+    }
+}
+
+/* Responsive Design for Screens Smaller Than 480px (Mobile Phones) */
+@media (max-width: 480px) {
+    /* Catalog Section */
+    .catalog {
+        grid-template-columns: 1fr; /* 1 column for mobile phones */
+        gap: 15px; /* Reduce gap between cards */
+    }
+
+    .catalog-item {
+        min-height: 300px; /* Further reduce card height */
+    }
+
+    .catalog-image-container {
+        height: 200px; /* Further reduce image container height */
+    }
+
+    .catalog-item h2 {
+        font-size: 1rem; /* Further reduce font size for item title */
+    }
+
+    .catalog-item span {
+        font-size: 0.9rem; /* Further reduce font size for price */
+    }
+
+    /* Add-to-Cart Button */
+    .catalog-image-container .add-to-cart {
+        font-size: 0.8rem; /* Further reduce font size for button */
+        padding: 6px 12px; /* Adjust padding */
+    }
 }

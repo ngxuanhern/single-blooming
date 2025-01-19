@@ -3,18 +3,22 @@ html, body, #root {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #ffe6f2;
     color: #333;
+
 }
 
+.cart-container
+{
+    background-color:#ffe6f2;
+}
 /* Cart Styles */
 .cart {
-    padding: 20px;
-    background-color: #fff;
+    padding: 30px;
     width: 80%;
-    margin: 20px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
+    background-color:white ;
 }
 
 .cart h2 {
@@ -32,9 +36,9 @@ html, body, #root {
 }
 
 .cart-item {
+    background-color: #F5F5F5;
     display: flex;
     flex-direction: row;
-    background-color: #ffe6f2;;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -49,7 +53,7 @@ html, body, #root {
 
 .cart-item img {
     width: 160px;
-    height: 160px;
+    height: maximum;
     object-fit: cover;
     margin-right: 20px;
     border-right: 1px solid #e0e0e0;
@@ -183,4 +187,113 @@ html, body, #root {
     background-color: #ff4081; /* Bright pink background */
     color: #fff; /* White text */
     transform: translateY(-3px);
+}
+
+/* Responsive Design for Screens Smaller Than 768px */
+@media (max-width: 768px) {
+    /* Cart Container */
+    .cart {
+        width: 90%; /* Increase width for smaller screens */
+        padding: 20px; /* Reduce padding */
+    }
+
+    /* Cart Heading */
+    .cart h2 {
+        font-size: 1.8rem; /* Reduce font size for heading */
+    }
+
+    /* Cart Items */
+    .cart-item {
+        flex-direction: column; /* Stack cart items vertically */
+        align-items: center; /* Center-align items */
+    }
+
+    .cart-item img {
+        width: 100%; /* Full width for images */
+        height: auto; /* Adjust height automatically */
+        margin-right: 0; /* Remove right margin */
+        border-right: none; /* Remove border */
+        border-bottom: 1px solid #e0e0e0; /* Add bottom border */
+    }
+
+    .item-info {
+        padding: 10px; /* Reduce padding */
+        text-align: center; /* Center-align text */
+    }
+
+    .item-info h3 {
+        font-size: 1.2rem; /* Reduce font size for item title */
+    }
+
+    .item-info p {
+        font-size: 0.9rem; /* Reduce font size for item details */
+    }
+
+    .cart-item button {
+        margin: 10px auto; /* Center-align button */
+    }
+
+    /* Cart Actions */
+    .cart-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduce gap between buttons */
+    }
+
+    .cart-actions button {
+        width: 100%; /* Full width for buttons */
+    }
+
+    /* Confirmation Popup */
+    .popup-content {
+        padding: 20px; /* Reduce padding */
+    }
+
+    .popup-content h3 {
+        font-size: 1.5rem; /* Reduce font size for popup heading */
+    }
+
+    .popup-content p {
+        font-size: 1rem; /* Reduce font size for popup text */
+    }
+
+    .popup-content button {
+        width: 100%; /* Full width for buttons */
+        margin: 5px 0; /* Adjust margin */
+    }
+}
+
+/* Responsive Design for Screens Smaller Than 480px (Mobile Phones) */
+@media (max-width: 480px) {
+    /* Cart Container */
+    .cart {
+        width: 95%; /* Further increase width for mobile phones */
+        padding: 15px; /* Further reduce padding */
+    }
+
+    /* Cart Heading */
+    .cart h2 {
+        font-size: 1.6rem; /* Further reduce font size for heading */
+    }
+
+    /* Cart Items */
+    .item-info h3 {
+        font-size: 1.1rem; /* Further reduce font size for item title */
+    }
+
+    .item-info p {
+        font-size: 0.8rem; /* Further reduce font size for item details */
+    }
+
+    /* Confirmation Popup */
+    .popup-content {
+        padding: 15px; /* Further reduce padding */
+    }
+
+    .popup-content h3 {
+        font-size: 1.3rem; /* Further reduce font size for popup heading */
+    }
+
+    .popup-content p {
+        font-size: 0.9rem; /* Further reduce font size for popup text */
+    }
 }

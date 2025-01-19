@@ -66,6 +66,7 @@ function Cart({ cart, fetchCart, deleteFromCart, clearCart, makePayment }) {
     };
 
     return (
+        <div className= "cart-container">
         <div className="cart">
             <h2>Your Cart</h2>
             {groupedItems.length === 0 ? (
@@ -112,6 +113,7 @@ function Cart({ cart, fetchCart, deleteFromCart, clearCart, makePayment }) {
                     </div>
                 </div>
             )}
+        </div>
         </div>
     );
 }

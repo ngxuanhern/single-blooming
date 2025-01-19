@@ -120,3 +120,82 @@ h2 {
     padding: 10px;
     font-family: 'Rubik', serif;
 }
+/* Responsive Design for Screens Smaller Than 768px */
+@media (max-width: 768px) {
+    /* Register Container */
+    .register-container {
+        width: 60%; /* Increase width for smaller screens */
+        padding: 1.5rem; /* Reduce padding */
+    }
+
+    /* Form Heading */
+    h2 {
+        font-size: 2rem; /* Reduce font size for heading */
+    }
+
+    /* Form Inputs */
+    .form-control {
+        font-size: 0.9rem; /* Reduce font size for inputs */
+    }
+
+    /* Register Button */
+    .custom-register-btn {
+        font-size: 0.9rem; /* Reduce font size for button */
+        padding: 8px; /* Adjust padding */
+    }
+
+    /* Links and Text */
+    .link {
+        font-size: 0.9rem; /* Reduce font size for links */
+    }
+
+    .text-center p {
+        font-size: 0.9rem; /* Reduce font size for "New User?" text */
+    }
+
+    /* Error Alert */
+    .alert {
+        font-size: 0.9rem; /* Reduce font size for error messages */
+        padding: 8px; /* Adjust padding */
+    }
+}
+
+/* Responsive Design for Screens Smaller Than 480px (Mobile Phones) */
+@media (max-width: 480px) {
+    /* Register Container */
+    .register-container {
+        width: 90%; /* Full width for mobile phones */
+        padding: 1rem; /* Further reduce padding */
+    }
+
+    /* Form Heading */
+    h2 {
+        font-size: 1.8rem; /* Further reduce font size for heading */
+    }
+
+    /* Form Inputs */
+    .form-control {
+        font-size: 0.8rem; /* Further reduce font size for inputs */
+    }
+
+    /* Register Button */
+    .custom-register-btn {
+        font-size: 0.8rem; /* Further reduce font size for button */
+        padding: 6px; /* Adjust padding */
+    }
+
+    /* Links and Text */
+    .link {
+        font-size: 0.8rem; /* Further reduce font size for links */
+    }
+
+    .text-center p {
+        font-size: 0.8rem; /* Further reduce font size for "New User?" text */
+    }
+
+    /* Error Alert */
+    .alert {
+        font-size: 0.8rem; /* Further reduce font size for error messages */
+        padding: 6px; /* Adjust padding */
+    }
+}

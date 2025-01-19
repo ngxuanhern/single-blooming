@@ -7,10 +7,10 @@ function Product({ catalog, addToCart }) {
 
     const priceRanges = [
         { label: 'All Prices', range: [0, Infinity] },
-        { label: '10-50', range: [10, 50] },
-        { label: '50-100', range: [50, 100] },
-        { label: '100-150', range: [100, 150] },
-        { label: '150-200', range: [150, 200] }
+        { label: 'RM10-50', range: [10, 50] },
+        { label: 'RM50-100', range: [50, 100] },
+        { label: 'RM100-150', range: [100, 150] },
+        { label: 'RM150-200', range: [150, 200] }
     ];
 
     const filteredCatalog = catalog.filter(item => {

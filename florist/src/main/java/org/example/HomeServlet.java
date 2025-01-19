@@ -22,8 +22,8 @@ public class HomeServlet extends HttpServlet {
 
 
         String catalogJson = "["
-                + "{ \"name\": \"Stole My Heart (V188)\", \"price\": 188, \"image\": \"img.png\" },"
-                + "{ \"name\": \"Santa Mini Bouquet\", \"price\": 58, \"image\": \"img_1.png\" },"
+                + "{ \"name\": \"Stole My Heart\", \"price\": 188, \"image\": \"img.png\" },"
+                + "{ \"name\": \"Santa Mini Bouquet\", \"price\": 48, \"image\": \"img_1.png\" },"
                 + "{ \"name\": \"Xmas Flower Bouquet\", \"price\": 108, \"image\": \"img_2.png\" },"
                 + "{ \"name\": \"Xmas Mini Flower Bouquet\", \"price\": 88, \"image\": \"img_3.png\" },"
                 + "{ \"name\": \"Black Leyanna\", \"price\": 88, \"image\": \"img_4.png\" },"

@@ -87,3 +87,46 @@
     font-family: 'Dancing Script', cursive;
 
 }
+
+/* Responsive Design for Screens Smaller Than 768px */
+@media (max-width: 768px) {
+    .About-container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .About-body {
+        padding: 20px; /* Reduce padding for smaller screens */
+        max-width: 100%; /* Allow the body to take full width */
+        border-radius: 10px; /* Slightly reduce border radius */
+    }
+
+    .About-body h2 {
+        font-size: 2em; /* Reduce font size for heading */
+        margin-bottom: 15px; /* Reduce margin */
+    }
+
+    .About-body h3 {
+        font-size: 1.5em; /* Reduce font size for subheadings */
+        margin-top: 20px; /* Reduce margin */
+        margin-bottom: 10px; /* Reduce margin */
+    }
+
+    .About-body p {
+        font-size: 1em; /* Reduce font size for paragraphs */
+        margin-bottom: 15px; /* Reduce margin */
+    }
+
+    .About-body ul {
+        padding-left: 15px; /* Reduce padding for lists */
+    }
+
+    .About-body li {
+        font-size: 1em; /* Reduce font size for list items */
+        margin-bottom: 8px; /* Reduce margin */
+    }
+
+    .About-body .cta {
+        font-size: 1.1em; /* Reduce font size for call-to-action */
+        margin-top: 20px; /* Reduce margin */
+    }
+}

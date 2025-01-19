@@ -333,16 +333,16 @@ function App() {
                     </div>
                     <div className="footer-social">
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                            <img src="facebook-icon.png" alt="Facebook" className="social-icon" />
+                            <img src="/facebook.png" alt="Facebook" className="social-icon" />
                         </a>
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                            <img src="instagram-icon.png" alt="Instagram" className="social-icon" />
+                            <img src="/instagram.png" alt="Instagram" className="social-icon" />
                         </a>
                         <a href="mailto:info@singleblooming.com">
-                            <img src="email-icon.png" alt="Email" className="social-icon" />
+                            <img src="/email.png" alt="Email" className="social-icon" />
                         </a>
                         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                            <img src="twitter-icon.png" alt="Twitter" className="social-icon" />
+                            <img src="/twitter.png" alt="Twitter" className="social-icon" />
                         </a>
                     </div>
                 </footer>
