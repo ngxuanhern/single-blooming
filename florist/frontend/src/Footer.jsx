@@ -13,7 +13,7 @@ const CATEGORIES = [
 
 const CUSTOMERSERVICE = [
     { name: "FAQ", link: "#" },
-    { name: "Track Your Order", link: "#" },
+    { name: "Track Your Order", link: "/order" },
 ];
 
 const QUICKLINK = [
@@ -49,7 +49,7 @@ const ItemsContainer = () => {
             <div>
                 <h1 className="font-bold text-2xl">SINGLE & BLOOMING</h1>
                 <p className="text-gray-200 text-sm">
-                    Founded in 2020, Single & Blooming is Malaysia’s most stylish online florist and purveyor of gifts. We curate the most luxurious flowers, live plants and unique gifts from around the world, delivering them to your doorstep so you can focus on creating moments of happiness with the people you love.
+                    Founded in 2013, Single & Blooming is Malaysia’s most stylish online florist and purveyor of gifts. We curate the most luxurious flowers, live plants and unique gifts from around the world, delivering them to your doorstep so you can focus on creating moments of happiness with the people you love.
                 </p>
             </div>
 
